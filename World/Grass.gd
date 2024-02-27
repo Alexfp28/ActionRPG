@@ -9,4 +9,5 @@ func create_grass_effect():
 
 func _on_Hurtbox_area_entered(area):
 	create_grass_effect()
+	print("Hierba Rota")
 	queue_free()

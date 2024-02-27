@@ -23,6 +23,7 @@ onready var swordHitbox = $HitboxPivot/SwordHitbox
 onready var hurtbox = $Hurtbox
 
 func _ready():
+	randomize()
 	stats.connect("sin_vida", self, "queue_free")
 	animationTree.active = true
 	swordHitbox.retroceso_vector = roll_vector
