@@ -3,7 +3,6 @@ extends Control
 var corazones = 4 setget set_corazones
 var max_corazones = 4 setget set_max_corazones
 
-onready var label = $Label
 onready var corazonUIEmpty = $CorazonUIEmpty
 onready var corazonUIFull = $CorazonUIFull
 
@@ -19,7 +18,11 @@ func set_max_corazones(value):
 		corazonUIEmpty.rect_size.x = max_corazones * 15
 	
 func _ready():
+	# Corazones vacios
 	self.max_corazones = PlayerStats.maxima_vida
+	
+	# Corazones llenos
 	self.corazones = PlayerStats.vida
+	
 	PlayerStats.connect("vida_changed", self, "set_corazones")
 	PlayerStats.connect("max_vida_changed", self, "set_max_corazones")

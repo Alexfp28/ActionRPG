@@ -1,24 +1,37 @@
 extends Node2D
 
-export(int) var contador = 0
+export(int) var contador = 1
+
+const ChestEffect = preload("res://Effects/ChestEffect.tscn")
 
 var is_player_inside = false
 var is_opened = false
+
+var eventSelf = InputEvent
+var player = KinematicBody2D
 
 onready var animation_player = $AnimationPlayer
 
 func _ready():
 	animation_player.play("Idle")
-
-func _input(event):
-	if event.is_action_pressed("Interact") and is_player_inside and not is_opened:
-		is_opened = true
-		animation_player.play("Open")
-
-
-func _on_Area2D_body_entered(player: KinematicBody2D):
-	is_player_inside = true
 	
+func create_chest_effect():
+		var grassEffect = ChestEffect.instance()
+		get_parent().add_child(grassEffect)
+		grassEffect.global_position = global_position
 
-func _on_Area2D_body_exited(player: KinematicBody2D):
+
+func _on_Hurtbox_area_entered(area):
+	if (PlayerStats.vida < 4):
+		PlayerStats.vida += 1
+		
+	elif (PlayerStats.vida > 4):
+		
+		PlayerStats.maxima_vida += 1
+		PlayerStats.vida += 1
+	create_chest_effect()
+	queue_free()
+
+
+func _on_Hurtbox_area_exited(area):
 	is_player_inside = false

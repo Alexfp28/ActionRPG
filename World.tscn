@@ -492,7 +492,7 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 [node name="World" type="Node2D"]
 
 [node name="Background" type="Sprite" parent="."]
-position = Vector2( 0, -2 )
+position = Vector2( 1.90991, -1.14262 )
 texture = ExtResource( 3 )
 offset = Vector2( 160, 91.4604 )
 region_enabled = true
@@ -879,8 +879,25 @@ position = Vector2( -217.043, 226.179 )
 [node name="Tree16" parent="YSort/Trees" instance=ExtResource( 9 )]
 position = Vector2( -242.036, 33.586 )
 
-[node name="Chest" parent="YSort" instance=ExtResource( 11 )]
+[node name="Chests" type="YSort" parent="YSort"]
+
+[node name="Chest" parent="YSort/Chests" instance=ExtResource( 11 )]
 position = Vector2( -257.045, -123.689 )
+
+[node name="Chest5" parent="YSort/Chests" instance=ExtResource( 11 )]
+position = Vector2( -255.992, 60.5215 )
+
+[node name="Chest4" parent="YSort/Chests" instance=ExtResource( 11 )]
+position = Vector2( -16.4763, 256.434 )
+
+[node name="Chest2" parent="YSort/Chests" instance=ExtResource( 11 )]
+position = Vector2( 495.5, -121.57 )
+
+[node name="Chest3" parent="YSort/Chests" instance=ExtResource( 11 )]
+position = Vector2( 268.081, 198.711 )
+
+[node name="Chest6" parent="YSort/Chests" instance=ExtResource( 11 )]
+position = Vector2( 432.697, 70.9621 )
 
 [node name="Bat" parent="YSort" instance=ExtResource( 7 )]
 position = Vector2( 227.225, -3.23502 )
@@ -895,13 +912,13 @@ position = Vector2( -45.1051, 288.997 )
 position = Vector2( 620.3, 275.908 )
 
 [node name="Bat5" parent="YSort" instance=ExtResource( 7 )]
-position = Vector2( 581.705, -55.1883 )
+position = Vector2( 567.11, -33.9588 )
 
 [node name="Bat6" parent="YSort" instance=ExtResource( 7 )]
 position = Vector2( 284.215, -89.4066 )
 
 [node name="Bat7" parent="YSort" instance=ExtResource( 7 )]
-position = Vector2( -184.135, -35.5936 )
+position = Vector2( -103.198, 16.8166 )
 
 [node name="Bat8" parent="YSort" instance=ExtResource( 7 )]
 position = Vector2( -277.188, 298.168 )
@@ -915,22 +932,16 @@ position = Vector2( 326.871, 310.04 )
 [node name="Bat11" parent="YSort" instance=ExtResource( 7 )]
 position = Vector2( 524.963, 113.11 )
 
-[node name="Chest2" parent="YSort" instance=ExtResource( 11 )]
-position = Vector2( 466.349, -118.141 )
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="VidaUI" parent="CanvasLayer" instance=ExtResource( 8 )]
-margin_left = 2.75377
-margin_top = 2.50343
-margin_right = 62.7538
-margin_bottom = 14.5034
-
-[node name="Chest" parent="." instance=ExtResource( 11 )]
-position = Vector2( 268.081, 198.711 )
+margin_left = 3.0
+margin_top = 3.0
+margin_right = 61.0
+margin_bottom = 15.0
 
 [node name="Bat" parent="." instance=ExtResource( 7 )]
-position = Vector2( 451.743, -59.3578 )
+position = Vector2( 466.338, 12.955 )
 
 [node name="Bat2" parent="." instance=ExtResource( 7 )]
 position = Vector2( 512.617, 205.57 )
@@ -945,10 +956,10 @@ position = Vector2( -47.2462, 190.137 )
 position = Vector2( -271.02, 160.129 )
 
 [node name="Bat6" parent="." instance=ExtResource( 7 )]
-position = Vector2( -174.93, 42.0566 )
+position = Vector2( -195.496, 59.3055 )
 
 [node name="Bat7" parent="." instance=ExtResource( 7 )]
-position = Vector2( -105.656, -48.9254 )
+position = Vector2( -92.3876, -57.5499 )
 
 [node name="Bat8" parent="." instance=ExtResource( 7 )]
 position = Vector2( 125.085, -94.51 )
